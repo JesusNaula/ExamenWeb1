@@ -37,8 +37,7 @@ module.exports.routes = {
   },
   'get /crearUsuario':{
     view:'CrearUsuario'},
-  'get /listaPizza':{
-    view:'SolicitudPizza'},
+  'get /listaPizza': 'PizzaController.listarPizza',
   'get /crearPizza':{
     view:'crearPizza'}
   /***************************************************************************

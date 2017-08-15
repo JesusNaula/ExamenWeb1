@@ -3,7 +3,7 @@
  */
 declare var module;
 declare var sails;
-declare var Usuario;
+declare var Pizza;
 module.exports = {
 
   crearPizza:(req,res)=>{
@@ -31,7 +31,25 @@ module.exports = {
 
 
 
+  },
+  listarPizza:(req,res)=> {
+
+    let parametros = req.allParams();
+
+    sails.log.info("Parametros", parametros);
+    Pizza
+      .find()
+      .exec((err, pizza) => {
+        if (err) return res.negotiate(err);
+        else {
+          return res.view('SolicitudPizza', {
+            pizza: pizza
+          });
+        }
+
+      });
   }
+
 
 };
 

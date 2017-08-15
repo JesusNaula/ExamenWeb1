@@ -16,5 +16,20 @@ module.exports = {
                 return res.redirect("/");
             }
         });
+    },
+    listarPizza: function (req, res) {
+        var parametros = req.allParams();
+        sails.log.info("Parametros", parametros);
+        Pizza
+            .find()
+            .exec(function (err, pizza) {
+            if (err)
+                return res.negotiate(err);
+            else {
+                return res.view('SolicitudPizza', {
+                    pizza: pizza
+                });
+            }
+        });
     }
 };

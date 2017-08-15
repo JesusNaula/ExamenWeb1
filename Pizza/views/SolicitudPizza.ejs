@@ -1,1 +1,25 @@
-<h1>Pizza</h1>
+<div class="container">
+
+  <form action="/Pizza/listarPizza" method="post">
+    <div id="contenedor" class="row">
+      <% for(var i=0; i<pizza.length; i++) {%>
+      <div class="card" style="width: 20rem;">
+        <div class="card" style="width: 20rem">
+          <div class="card-block">
+            <h4 class="card-title"><%= pizza[i].nombrePizza %></h4>
+            <p class="card-text">
+              <%= pizza[i].ingredientes %>
+            </p>
+
+            <p class="card-text">Precio:<%= pizza[i].precio %>$
+            </p>
+            <button type="submit" class="btn btn-outline-success">Comprar Pizza</button>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    </div>
+
+
+  </form>
+</div>
