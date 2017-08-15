@@ -52,7 +52,8 @@ module.exports = {
 
             if(parametros.password==usuarioEncontrado.password){
               console.log("Estas logeado");
-              return res.ok('Estas logeado, aqui iria las paginas del administrador');
+              res.viewe
+              return res.redirect("/listaPizza");
             }else{
               return res.serverError("Password Incorrecta")
             }

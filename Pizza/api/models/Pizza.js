@@ -8,6 +8,15 @@
 module.exports = {
 
   attributes: {
+    nombrePizza: {
+      type: 'string'
+    },
+    ingredientes: {
+      type: 'string'
+    },
+    precio: {
+      type: 'string'
+    }
 
   }
 };
