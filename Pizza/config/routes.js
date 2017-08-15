@@ -37,7 +37,7 @@ module.exports.routes = {
   },
   'get /crearUsuario':{
     view:'CrearUsuario'},
-  'get /SolicitudPizza': {
+  'get /solicitarPizza': {
     view: 'SolicitudPizza'
   },
   /***************************************************************************
