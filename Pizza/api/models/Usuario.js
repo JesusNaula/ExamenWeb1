@@ -11,16 +11,10 @@ module.exports = {
     nombreUsuario: {
       type: 'string'
     },
-    correo: {
-      type: 'email'
-    },
     password: {
       type: 'string'
-    },
-    listCompraPizza: {
-      collection: 'Pizza',
-      via: 'idUsuario'
     }
+
   }
 };
 
