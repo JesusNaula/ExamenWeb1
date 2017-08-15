@@ -37,7 +37,9 @@ module.exports.routes = {
   },
   'get /crearUsuario':{
     view:'CrearUsuario'},
-
+  'get /SolicitudPizza': {
+    view: 'SolicitudPizza'
+  },
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

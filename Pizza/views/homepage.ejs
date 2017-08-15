@@ -1,6 +1,6 @@
 <h1>Usuario</h1>
 
-<form action="/" method="post">
+<form action="/Usuario/login" method="post">
 
   <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,33 +22,32 @@
     </div>
   </nav>
 
-  <div class="form-group row">
-    <label for="nombreUsuario" class="col-2 col-form-label">Usuario</label>
-    <div class="col-10">
-      <input class="form-control"
-             type="text"
-             placeholder="Ingrese sus nombres"
-             id="nombreUsuario"
-             name="nombreUsuario"
 
-      >
+  <div class="col-md-6">
+    <!-- Login Form -->
+    <div class="nb-login">
+      <h3 class="scenter">Sign In</h3>
+      <form action="/Usuario/login" method="post">
+        <div class="form-group">
+          <input type="text"
+                 class="form-control"
+                 placeholder="Ingresar Usuario"
+                 id="nombreUsuario"
+                 name="nombreUsuario"
+          >
+        </div>
+        <div class="form-group">
+          <input type="password"
+                 class="form-control"
+                 placeholder="Ingresar Password"
+                 id="password"
+                 name="password">
+        </div>
+        <button type="submit" class="btn btn-block"
+        >Ingresar</button>
+      </form>
     </div>
   </div>
-
-
-  <div class="form-group row">
-    <label for="password" class="col-2 col-form-label">Password</label>
-    <div class="col-10">
-      <input class="form-control" type="password" placeholder="Ingrese un password"
-             name="password"
-             id="password">
-    </div>
-  </div>
-
-
-  <button
-    class="btn btn-outline-success">Ingresar</button>
-
 
 
 </form>

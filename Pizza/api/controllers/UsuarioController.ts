@@ -37,6 +37,36 @@ module.exports = {
 
 
   },
+  login: (req, res) => {
+
+
+    var parametros = req.allParams();
+    if(parametros.nombreUsuario&&parametros.password){
+      Usuario.findOne({nombreUsuario:parametros.nombreUsuario})
+        .exec((err, usuarioEncontrado) => {
+          if (err)return res.negotiate(err,);
+          if (!usuarioEncontrado) {
+            return res.serverError('El usuario no existe')
+          }
+          else{
+
+            if(parametros.password==usuarioEncontrado.password){
+              console.log("Estas logeado");
+              return res.ok('Estas logeado, aqui iria las paginas del administrador');
+            }else{
+              return res.serverError("Password Incorrecta")
+            }
+
+          }
+
+        });
+    }
+    else{
+      sails.log('Usuario eliminado');
+      return res.view('/SolicitudPizza');
+
+    }
+  },
 
 
 };
