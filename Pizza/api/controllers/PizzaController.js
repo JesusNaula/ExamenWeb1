@@ -5,7 +5,8 @@ module.exports = {
         var nuevoPizza = {
             nombrePizza: parametros.nombrePizza,
             ingredientes: parametros.ingredientes,
-            precio: parametros.precio
+            precio: parametros.precio,
+            imagenPizza: parametros.imagenPizza
         };
         Pizza.create(nuevoPizza)
             .exec(function (error, usuarioCreado) {

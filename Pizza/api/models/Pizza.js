@@ -16,6 +16,9 @@ module.exports = {
     },
     precio: {
       type: 'string'
+    },
+    imagenPizza: {
+      type: 'string'
     }
 
   }

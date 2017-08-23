@@ -1,25 +1,78 @@
+<br>
+<br>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <h1>Solicitar Pizza</h1>
+    <br>
+    <br>
+    <a href="/crearPizza">
+      <button type="button"  class="btn btn-primary">Crear Pizza</button>
+    </a></div>
+  <div class="col-md-4"></div>
+</div>
+
+<br>
+<br>
+
 <div class="container">
-
-  <form action="/Pizza/listarPizza" method="post">
-    <div id="contenedor" class="row">
-      <% for(var i=0; i<pizza.length; i++) {%>
+  <div id="contenedor" class="row">
+    <% for(var i=0; i<pizza.length; i++) {%>
+    <div class="col-sm-4">
       <div class="card" style="width: 20rem;">
-        <div class="card" style="width: 20rem">
-          <div class="card-block">
-            <h4 class="card-title"><%= pizza[i].nombrePizza %></h4>
-            <p class="card-text">
-              <%= pizza[i].ingredientes %>
-            </p>
+        <img class="card-img-top" src="<%=pizza[i].imagenPizza%>" alt="">
+        <div class="card-block">
 
-            <p class="card-text">Precio:<%= pizza[i].precio %>$
-            </p>
-            <button type="submit" class="btn btn-outline-success">Comprar Pizza</button>
-          </div>
+          <h4 class="card-title"><%= pizza[i].id %> - <%= pizza[i].nombrePizza %></h4>
+          <p class="card-text">Lugar :
+            <%= pizza[i].ingredientes %>
+          </p>
+          <p class="card-text">Mes :
+            <%= pizza[i].precio %>
+          </p>
         </div>
+
+
+        <div class="row">
+
+          <div class="col-md-12">
+            <form action="/Festividad/eliminarFestividad" method="post">
+              <input hidden
+                     type="text"
+                     value="<%=pizza[i].id%>"
+                     name="id">
+              <!--boton Comprar-->
+              <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                  <button  type="submit" class="btn btn-warning">Comprar</button>
+                </div>
+                <div class="col-md-4"></div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                  <a href="/editarFestividades?id=<%= pizza[i].id %>">
+                    <button  type="button"  class="btn btn-success">Editar Ingredientes</button>
+                  </a>
+                </div>
+                <div class="col-md-4"></div>
+              </div>
+              <br>
+              <br>
+            </form>
+          </div>
+
+        </div>
+
+
+
+
       </div>
-      <% } %>
+      <br>
     </div>
 
-
-  </form>
+    <% } %>
+  </div>
 </div>
