@@ -16,7 +16,7 @@ module.exports = {
       ingredientes:parametros.ingredientes,
       precio:parametros.precio
     };
-    Usuario.create(nuevoPizza)
+    Pizza.create(nuevoPizza)
       .exec(
         (error,usuarioCreado)=>{
           if(error){
